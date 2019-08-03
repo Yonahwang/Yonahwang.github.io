@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Evading Classifiers by Morphing in the Dark | Yonah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="Evading Classifiers by Morphing in the Dark  Curtis Hung Dang -&amp;gt;National University of SingaporeCCS’17, October 30-November 3, 2017, Dallas, TX, USA   中文标题：  滥用恶意软件检测器中的PDF解析器    Questions：  1)">
+<meta name="keywords" content="Evading Classifiers">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Evading Classifiers by Morphing in the Dark">
+<meta property="og:url" content="http://yoursite.com/2019/08/03/Evading Classifiers by Morphing in the Dark/index.html">
+<meta property="og:site_name" content="Yonah">
+<meta property="og:description" content="Evading Classifiers by Morphing in the Dark  Curtis Hung Dang -&amp;gt;National University of SingaporeCCS’17, October 30-November 3, 2017, Dallas, TX, USA   中文标题：  滥用恶意软件检测器中的PDF解析器    Questions：  1)">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/08/03/Evading%20Classifiers%20by%20Morphing%20in%20the%20Dark/B4TA0YMP@L5P%60A4D5%60HTR.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/03/Evading%20Classifiers%20by%20Morphing%20in%20the%20Dark/1525338094177.png">
+<meta property="og:updated_time" content="2019-08-03T13:54:17.569Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Evading Classifiers by Morphing in the Dark">
+<meta name="twitter:description" content="Evading Classifiers by Morphing in the Dark  Curtis Hung Dang -&amp;gt;National University of SingaporeCCS’17, October 30-November 3, 2017, Dallas, TX, USA   中文标题：  滥用恶意软件检测器中的PDF解析器    Questions：  1)">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/03/Evading%20Classifiers%20by%20Morphing%20in%20the%20Dark/B4TA0YMP@L5P%60A4D5%60HTR.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Yonah" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.webp">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <script>
+  let antiquityStorage = window.sessionStorage.getItem('antiquitySessionStorage');
+  if (antiquityStorage == '' || antiquityStorage == null) {
+    var antiquityLoader = '<div id="loaderbox"><div class="loader"><div class="load-roll"><div class="load-top"></div><div class="load-right"></div><div class="load-bottom"></div></div></div></div>';
+    document.write(antiquityLoader);
+    document.body.style.overflow = 'hidden'
+  }
+  </script>
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-Evading Classifiers by Morphing in the Dark" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      Evading Classifiers by Morphing in the Dark
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/08/03/Evading Classifiers by Morphing in the Dark/" class="article-date">
+  <time datetime="2019-08-03T09:43:56.000Z" itemprop="datePublished">2019-08-03</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Evading-Classifiers/">Evading Classifiers</a></li></ul>
+
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h2 id="Evading-Classifiers-by-Morphing-in-the-Dark"><a href="#Evading-Classifiers-by-Morphing-in-the-Dark" class="headerlink" title="Evading Classifiers by Morphing in the Dark"></a>Evading Classifiers by Morphing in the Dark</h2><blockquote>
+<p> <code>Curtis Hung Dang -&gt;National University of Singapore</code><br><code>CCS’17, October 30-November 3, 2017, Dallas, TX, USA</code></p>
+</blockquote>
+<hr>
+<h3 id="中文标题："><a href="#中文标题：" class="headerlink" title="中文标题："></a>中文标题：</h3><blockquote>
+<p> <code>滥用恶意软件检测器中的PDF解析器</code> </p>
+</blockquote>
+<hr>
+<h3 id="Questions："><a href="#Questions：" class="headerlink" title="Questions："></a>Questions：</h3><blockquote>
+<ul>
+<li>1)    <strong>What is the problem?</strong><ul>
+<li>针对分类器逃逸，提出了一个<code>限制对手逃避分类器的模型—EvadeHC</code></li>
+</ul>
+</li>
+<li>2)    <strong>Why is the problem important?</strong><ul>
+<li>Learning-based systems have been shown to be vulnerable to evasion through adversarial data manipulation.</li>
+<li>通过对抗数据操作，基于学习的系统已被证明<code>容易逃避</code></li>
+</ul>
+</li>
+<li>3)    <strong>What is the old technique?</strong><ul>
+<li><code>机器学习</code>：在安全环境中有很多创新应用[19,22,28]，但是[7,11,12]表明它们可能<code>易于逃避</code>,<br>许伟林在NDSS2016年的会议中的一篇文章，<code>自动逃逸分类</code>器，研究了对基于学习的系统的逃避攻击，<br>可是有研究者讨论如果隐藏分类评分的<code>简单预防措施足以阻止这些攻击这些技术</code>，如何与现实中部署的真正黑匣子系统（例如内置于电子邮件服务中的恶意软件检测器）<code>相互作用</code>仍然是一个问题，因为它们不太可能揭示实值分数，而是仅暴露其最终决策</li>
+</ul>
+</li>
+<li>4)    <strong>What is the new technique?</strong><ul>
+<li>we propose an <code>effective hill-climbing</code> based evasion attack <code>EvadeHC</code><br>该解决方案会持续生成随机变形样本，<code>直至找到规避样本</code>。实证结果表明EvadeHC 在实验数据集上<code>获得100％的逃避率</code>，并且在执行成本方面<code>胜过基准解决方案高达80倍</code>，我们还将EvadeHC与逃避黑匣子分类器的最新技术进行比较，即使只能访问<code>检测器的二进制输出</code>，EvadeHC仍然<code>胜过以前的工作</code><br><img src="./B4TA0YMP@L5P%60A4D5%60HTR.png" alt="Alt text"> <img src="./1525338094177.png" alt="Alt text"><pre><code>* Malice-flipping sample：第一个被检测器检测为良性的样本。
+* Reject-flipping sample：第一个被分类器接受的样本
+* M : 样本在测试器中的结果从恶意到良性所需经过的修改次数
+* R : 样本在检测器中的结果从拒绝到接受所需经过的修改次数
+* G = M – R</code></pre></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>由此可知，<code>当G&gt;0，即可得到对抗样</code>本。当G&lt;0，在产生的修改后的恶意样本序列中得不到对抗样本。如上图所示：b中可得到恶意样本，a不可以<br>过程如下，对于一个原恶意样本：<br>        * （1）产生多个修改后的样本序列，得到它们的M和R值，若G&gt;0，则停止，找到对抗样本。否则转（2）<br>        * （2）取（1）中G中值较大的几个malice-flipping sample的前一个样本作为原恶意样本，转入（1）。<br>然后基于EvadeHC方法，<code>使用500份恶意PDF文件在PDF(RATE)和Hidost两个恶意软件检测器上进行了实验评估</code>。评估结果显示，提出的绕过攻击是非常有效的，<code>在评估数据集上获得了100%的绕过率</code>，<code>即每一份恶意PDF文件都可以被修改成对抗样本</code>。<br>最后，对于本文中提出的攻击，作者提出了可能的缓解策略<code>：将对抗样本加入训练样本中增强模型。</code>  </p>
+</blockquote>
+<blockquote>
+<ul>
+<li>5) <strong>Why is the problem difficult?</strong><ul>
+<li>有限的黑匣子访问存在两种主要的逃避挑战。首先，检测器D只提供接受/拒绝的<code>二进制输出</code>。因此，从一组恶意样本中，<code>不清楚哪一个更接近逃避样本</code>。以前的作品[34]假设D返回一个真实的置信水平，在此基础上规避逃避。尽管如此，在实践中，更<code>谨慎的探测器可能不会透露除最终决定之外的任何信息</code>。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="摘要："><a href="#摘要：" class="headerlink" title="摘要："></a>摘要：</h3><blockquote>
+<p> Learning-based systems have been shown to <code>be vulnerable to evasion through adversarial data manipulation</code>. These attacks have been studied under assumptions that the adversary has certain knowledge of either the target model internals, its training dataset or at least classification scores it assigns to input samples. In this paper, we <code>investigate a much more constrained</code> and realistic attack scenario wherein the target classifier is minimally exposed to the adversary, <code>revealing only its final classification decision</code> (e.g., reject or accept an input sample). Moreover, the adversary can only manipulate malicious samples using a blackbox morpher. That is, <code>the adversary has to evade the targeted classifier</code> by morphing malicious samples <code>“in the dark”</code>. We present a scoring mechanism that <code>can assign a real-value score</code> which reflects evasion progress to each sample based on the limited information available. Leveraging on such scoring mechanism, we propose an evasion method<code>– EvadeHC–</code> and evaluate it against two <code>PDF malware detectors</code>, namely <code>PDFrate</code> and <code>Hidost</code>. The experimental evaluation demonstrates that the proposed evasion attacks are effective, <code>attaining 100% evasion rate on the evaluation dataset</code>. Interestingly, EvadeHC outperforms the known classifier evasion techniques that operate based on classification scores output by the classifiers. Although ```our evaluations are conducted on PDF malware classifiers``, the proposed approaches are <code>domain-agnostic</code> and are of wider application to other <code>learning-based systems</code>.</p>
+</blockquote>
+<p>通过<code>对抗数据操作</code>，基于学习的系统已被<code>证明容易逃避</code>。这些攻击的研究是基于以下假设：对手对目标模型内部结构，<code>训练数据集或至少分配给输入样本的分类评分有一定的了解</code>。在本文中，我们研究了一个<code>更加严格</code>和逼真的攻击场景，其中<code>目标分类器最低限度地暴露给敌</code>手，只显示其最终分类决策（例如拒绝或接受输入样本）。而且，攻击者只能<code>使用黑箱变形器来操纵恶意样本</code>。也就是说，敌人必须通过在“黑暗中”对恶意样本进行变形来逃避目标分类器。我们<code>提供了一个评分机制</code>，可以根据可用的有限信息为每个样本指定一个真实值评分，该评分反映了每个样本的逃避进度。利用这种评分机制，我们提出了一种逃避方法 - <code>EvadeHC</code>并针对<code>两种PDF恶意软件检测器</code>（即<code>PDFRate</code>和<code>Hidost</code>）进行评估。实验评估表明，所提议的规避行为是有效的，<code>对评估数据集的规避率为100％</code>。有趣的是，<code>EvadeHC优于已知的基于分类器输出的分类评分运行的分类器规避技术</code>。尽管我们的评估是针对PDF恶意软件分类器进行的，但所提出的方法是<code>domain-agnostic</code>，并且更广泛地应用于其他基于学习的系统。</p>
+<hr>
+<h3 id="亮点解读和贡献："><a href="#亮点解读和贡献：" class="headerlink" title="亮点解读和贡献："></a>亮点解读和贡献：</h3><blockquote>
+<ul>
+<li>(1) We give a formulation of classifier evasion in the dark whereby the adversary only has blackbox accesses to the detector, a morpher and a tester.We also give a probabilisitic model HsrMopher to formalise the notion that almost no domain-specific knowledge can be exploited in the evasion process.<br><code>我们给出了一个在黑暗中逃避分类器的方法，即攻击者只能通过黑盒访问探测器，变形器和测试器。我们还给出了一个概率模型HsrMopher来形式化几乎没有领域特定知识的概念在逃避过程中被利用。</code></li>
+<li>(2) We design a scoring function that can assign real-value score reflecting evasion progress to samples, given only binary outcomes obtained from the detector and tester. We believe that this scoring mechanism is useful in extending existing works that necessitate classification scores or other auxiliary information to operate under a more restricted and realistic setting like the one we study.<br><code>我们设计了一个评分函数，只给出从检测器和测试器获得的二元结果，可以给样本指定反映逃避进度的实值评分。我们认为这种评分机制对于扩展现有的需要分类评分或其他辅助信息的作品是有用的，可以在我们所研究的那种更加严格和现实的环境下进行操作。</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>(3) Leveraging on the scoring function, we propose an effective hill-climbing based evasion attack EvadeHC. This algorithm is generic in a sense that it does not require any knowledge about the target system, even its confidence level in the classification decision.<br><code>利用评分函数，提出一种有效的hill-climbing逃避攻击EvadeHC。这种算法是通用的，它不需要关于目标系统的任何知识，甚至不需要关于分类决策的可信度。</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>(4) We conduct experimental evaluation on two popular PDF malware classifiers. The empirical results demonstrate not only the efficiency but also the robustness of EvadeHC. More notably, it is also suggested that the scoring mechanism underlying EvadeHC is more informative than the one that relies solely on classification scores [34].<br><code>对两种流行的PDF恶意软件分类器进行实验评估。实证结果不仅证明了EvadeHC的效率，而且还证明了其稳健性。更值得注意的是，也有人认为EvadeHC的评分机制比单纯依赖分类评分的评分机制更具信息量[34]</code>。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="论文总结："><a href="#论文总结：" class="headerlink" title="论文总结："></a>论文总结：</h3><blockquote>
+</blockquote>
+<ul>
+<li>We have proposed <code>a restricted adversary model</code> for <code>classifier evasion with only blackbox accesses</code>. Such restricted setting allows us to investigate generic evasion attacks that utilise limited information on the domain knowledge and the classifier’s specifics (e.g. model internals, and training dataset). On the one hand, this model provides the defender with a baseline of the adversary’s capability. On the other hand, the adversary could attain more effective evasion attacks by incorporating domain knowledge into the generic attacks.</li>
+<li>We have described EvadeHC, a generic hill-climbing based approach for evading binary-outcome detector. Our technique assumes minimal knowledge about both the detector and the data manipulation mechanism. The effectiveness of the proposed approach has been demonstrated by experimental studies conducted against two PDF malware classifiers. While the experiments are performed on malware classifiers, the proposed technique and its security implications may also be of wider application to other learning-based systems.<br>我们提出了一个<code>抗逃逸分类器的模型</code>，只有黑匣子访问。这种限制性设置允许我们调查利用有限领域知识和分类器特定信息（例如模型内部结构和训练数据集）的有限信息的通用躲避攻击。一方面，这种模式为后卫提供了对手能力的基准。另一方面，攻击者可以通过将领域知识纳入泛型攻击来获得更有效的躲避攻击。<br>我们已经描述了EvadeHC，这是一种逃避二进制结果检测器的通用爬山方法。我们的技术假定对检测器和数据处理机制都知之甚少。针对两种PDF恶意软件分类器进行的实验研究已证明了所提出方法的有效性。虽然实验是在恶意软件分类器上执行的，但所提出的技术及其安全性影响可能也会更广泛地应用于其他基于学习的系统。</li>
+</ul>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2019/08/03/reportEvasionAttacks/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            Evasion attacks against machine learning at test time
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/08/02/yonah01/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">yonah01</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.webp" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        凤娇娇
+      
+    </h3>
+    <p class="avatar-slogan">
+      眼睛可以看到百米之外，用心却可以千里之外
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/English/">English</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Evading-Classifiers/">Evading Classifiers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/">machine learning</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/English/" style="font-size: 10px;">English</a> <a href="/tags/Evading-Classifiers/" style="font-size: 10px;">Evading Classifiers</a> <a href="/tags/machine-learning/" style="font-size: 10px;">machine learning</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/03/reportEvasionAttacks/">Evasion attacks against machine learning at test time</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/03/Evading Classifiers by Morphing in the Dark/">Evading Classifiers by Morphing in the Dark</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/02/yonah01/">yonah01</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/02/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 yonah wang &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
