@@ -63,21 +63,67 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
-    <article id="post-reportEvasionAttacks" class="article global-container article-type-post" itemscope itemprop="blogPost">
+    <article id="post-机器学习算法之降维" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/03/reportEvasionAttacks/">Evasion attacks against machine learning at test time</a>
+      <a class="article-title" href="/2019/08/06/机器学习算法之降维/">机器学习算法之降维(SVD，PCA)</a>
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/08/03/reportEvasionAttacks/" class="article-date">
-  <time datetime="2019-08-03T09:43:56.000Z" itemprop="datePublished">2019-08-03</time>
+    <a href="/2019/08/06/机器学习算法之降维/" class="article-date">
+  <time datetime="2019-08-06T09:43:56.000Z" itemprop="datePublished">2019-08-06</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-learning/">Machine learning</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>降维方法有很多，而且分为线性降维和非线性降维，本篇文章主要讲解线性降维。<br>降维是机器学习中很重要的一种思想。在机器学习中经常会碰到一些高维的数据集，而在高维数据情形下会出现数据样本稀疏，距离计算等困难，这类问题是所有机器学习方法共同面临的严重问题，称之为“ 维度灾难 ”。另外在高维特征中容易出现特征之间的线性相关，这也就意味着有的特征是冗余存在的。基于这些问题，降维思想就出现了。</p>
+<p>　　</p>
+<h2 id="奇异值分解（SVD）"><a href="#奇异值分解（SVD）" class="headerlink" title="奇异值分解（SVD）"></a>奇异值分解（SVD）</h2><p>为什么先介绍SVD算法，因为在后面的PCA算法的实现用到了SVD算法。SVD算法不光可以用于降维算法中的特征分解，还可以用于推荐系统，以及自然语言处理等领域。是很多机器学习算法的基石。</p>
+<p>　　在线性代数中我们学过矩阵（在这里的矩阵必须是n×n的方阵）的特征分解，矩阵A和特征值、特征向量之间的关系如下</p>
+<img src="/.com//08/06/机器学习算法之降维/svd.png" title="This is an image">
+        
+          <p class="article-more-link">
+            <a href="/2019/08/06/机器学习算法之降维/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-reportEvasionAttacks" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/04/reportEvasionAttacks/">Evasion attacks against machine learning at test time</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/08/04/reportEvasionAttacks/" class="article-date">
+  <time datetime="2019-08-04T09:43:56.000Z" itemprop="datePublished">2019-08-04</time>
 </a>
     
     
@@ -103,10 +149,10 @@
 <ul>
 <li>在攻击者部署对抗样本之前找到学习模型的潜在攻击点 </li>
 <li>探索调研对应攻击对算法模型的不良影响 </li>
-<li>如果影响比较大，就需要设计合适的对应措施（也就是设计defence策略）
+<li>如果影响比较大，就需要设计合适的对应措施（也就是设计defence策略）</li></ul>
         
           <p class="article-more-link">
-            <a href="/2019/08/03/reportEvasionAttacks/#more">阅读全文</a>
+            <a href="/2019/08/04/reportEvasionAttacks/#more">阅读全文</a>
           </p>
         
       
@@ -169,7 +215,7 @@
 </ul>
 </li>
 <li>4)    <strong>What is the new technique?</strong><ul>
-<li>we propose an <code>effective hill-climbing</code> based evasion attack <code>EvadeHC</code><br>该解决方案会持续生成随机变形样本，<code>直至找到规避样本</code>。实证结果表明EvadeHC 在实验数据集上<code>获得100％的逃避率</code>，并且在执行成本方面<code>胜过基准解决方案高达80倍</code>，我们还将EvadeHC与逃避黑匣子分类器的最新技术进行比较，即使只能访问<code>检测器的二进制输出</code>，EvadeHC仍然<code>胜过以前的工作</code><br><img src="./B4TA0YMP@L5P%60A4D5%60HTR.png" alt="Alt text"> <img src="./1525338094177.png" alt="Alt text"><pre><code>* Malice-flipping sample：第一个被检测器检测为良性的样本。
+<li>we propose an <code>effective hill-climbing</code> based evasion attack <code>EvadeHC</code><br>该解决方案会持续生成随机变形样本，<code>直至找到规避样本</code>。实证结果表明EvadeHC 在实验数据集上<code>获得100％的逃避率</code>，并且在执行成本方面<code>胜过基准解决方案高达80倍</code>，我们还将EvadeHC与逃避黑匣子分类器的最新技术进行比较，即使只能访问<code>检测器的二进制输出</code>，EvadeHC仍然<code>胜过以前的工作</code><br><img src="/.com//B4TA0YMP@L5P%60A4D5%60HTR.png" alt="Alt text"> <img src="/.com//1525338094177.png" alt="Alt text"><pre><code>* Malice-flipping sample：第一个被检测器检测为良性的样本。
 * Reject-flipping sample：第一个被分类器接受的样本
 * M : 样本在测试器中的结果从恶意到良性所需经过的修改次数
 * R : 样本在检测器中的结果从拒绝到接受所需经过的修改次数
@@ -311,7 +357,7 @@
   <div class="widget-box">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/English/">English</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Evading-Classifiers/">Evading Classifiers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/">machine learning</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/English/">English</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Evading-Classifiers/">Evading Classifiers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/">Machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/">machine learning</a></li></ul>
     </div>
   </div>
 
@@ -321,7 +367,7 @@
   <div class="widget-box">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/English/" style="font-size: 10px;">English</a> <a href="/tags/Evading-Classifiers/" style="font-size: 10px;">Evading Classifiers</a> <a href="/tags/machine-learning/" style="font-size: 10px;">machine learning</a>
+      <a href="/tags/English/" style="font-size: 10px;">English</a> <a href="/tags/Evading-Classifiers/" style="font-size: 10px;">Evading Classifiers</a> <a href="/tags/Machine-learning/" style="font-size: 10px;">Machine learning</a> <a href="/tags/machine-learning/" style="font-size: 10px;">machine learning</a>
     </div>
   </div>
 
@@ -342,7 +388,11 @@
       <ul>
         
           <li>
-            <a href="/2019/08/03/reportEvasionAttacks/">Evasion attacks against machine learning at test time</a>
+            <a href="/2019/08/06/机器学习算法之降维/">机器学习算法之降维(SVD，PCA)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/04/reportEvasionAttacks/">Evasion attacks against machine learning at test time</a>
           </li>
         
           <li>
