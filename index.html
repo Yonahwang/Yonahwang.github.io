@@ -63,6 +63,59 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-markdown-math" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/29/markdown-math/">markdown-math</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/08/29/markdown-math/" class="article-date">
+  <time datetime="2019-08-29T13:25:12.000Z" itemprop="datePublished">2019-08-29</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="Markdown-数学公式集"><a href="#Markdown-数学公式集" class="headerlink" title="Markdown 数学公式集"></a>Markdown 数学公式集</h1><h2 id="1-如何插入公式"><a href="#1-如何插入公式" class="headerlink" title="1. 如何插入公式"></a>1. 如何插入公式</h2><ul>
+<li>行中公式(放在文中与其它文字混编)可以用如下方法表示：<blockquote>
+<p><strong>$ 数学公式 $</strong></p>
+</blockquote>
+</li>
+<li>独立公式可以用如下方法表示：<blockquote>
+<p><strong>$ 数学公式 $</strong></p>
+</blockquote>
+</li>
+<li>自动编号的公式可以用如下方法表示：</li>
+</ul>
+<h2 id="2-如何输入上下标"><a href="#2-如何输入上下标" class="headerlink" title="2. 如何输入上下标"></a>2. 如何输入上下标</h2>
+        
+          <p class="article-more-link">
+            <a href="/2019/08/29/markdown-math/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
     <article id="post-web-bug" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
@@ -98,6 +151,135 @@
         
           <p class="article-more-link">
             <a href="/2019/08/28/web-bug/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-Evading Classifiers by Morphing in the Dark" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/15/Evading Classifiers by Morphing in the Dark/">Evading Classifiers by Morphing in the Dark</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/08/15/Evading Classifiers by Morphing in the Dark/" class="article-date">
+  <time datetime="2019-08-15T09:43:56.000Z" itemprop="datePublished">2019-08-15</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-learning/">Machine learning</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h2 id="Evading-Classifiers-by-Morphing-in-the-Dark"><a href="#Evading-Classifiers-by-Morphing-in-the-Dark" class="headerlink" title="Evading Classifiers by Morphing in the Dark"></a>Evading Classifiers by Morphing in the Dark</h2><blockquote>
+<p> <code>Curtis Hung Dang -&gt;National University of Singapore</code><br><code>CCS’17, October 30-November 3, 2017, Dallas, TX, USA</code></p>
+</blockquote>
+<hr>
+<h3 id="中文标题："><a href="#中文标题：" class="headerlink" title="中文标题："></a>中文标题：</h3><blockquote>
+<p> <code>滥用恶意软件检测器中的PDF解析器</code> </p>
+</blockquote>
+<hr>
+<h3 id="Questions："><a href="#Questions：" class="headerlink" title="Questions："></a>Questions：</h3><blockquote>
+<ul>
+<li>1)    <strong>What is the problem?</strong><ul>
+<li>针对分类器逃逸，提出了一个<code>限制对手逃避分类器的模型—EvadeHC</code></li>
+</ul>
+</li>
+<li>2)    <strong>Why is the problem important?</strong><ul>
+<li>Learning-based systems have been shown to be vulnerable to evasion through adversarial data manipulation.</li>
+<li>通过对抗数据操作，基于学习的系统已被证明<code>容易逃避</code></li>
+</ul>
+</li>
+<li>3)    <strong>What is the old technique?</strong><ul>
+<li><code>机器学习</code>：在安全环境中有很多创新应用[19,22,28]，但是[7,11,12]表明它们可能<code>易于逃避</code>,<br>许伟林在NDSS2016年的会议中的一篇文章，<code>自动逃逸分类</code>器，研究了对基于学习的系统的逃避攻击，<br>可是有研究者讨论如果隐藏分类评分的<code>简单预防措施足以阻止这些攻击这些技术</code>，如何与现实中部署的真正黑匣子系统（例如内置于电子邮件服务中的恶意软件检测器）<code>相互作用</code>仍然是一个问题，因为它们不太可能揭示实值分数，而是仅暴露其最终决策</li>
+</ul>
+</li>
+<li>4)    <strong>What is the new technique?</strong><ul>
+<li>we propose an <code>effective hill-climbing</code> based evasion attack <code>EvadeHC</code><br>该解决方案会持续生成随机变形样本，<code>直至找到规避样本</code>。实证结果表明EvadeHC 在实验数据集上<code>获得100％的逃避率</code>，并且在执行成本方面<code>胜过基准解决方案高达80倍</code>，我们还将EvadeHC与逃避黑匣子分类器的最新技术进行比较，即使只能访问<code>检测器的二进制输出</code>，EvadeHC仍然<code>胜过以前的工作</code><br><img src="/.com//B4TA0YMP@L5P%60A4D5%60HTR.png" alt="Alt text"> <img src="/.com//1525338094177.png" alt="Alt text"><pre><code>* Malice-flipping sample：第一个被检测器检测为良性的样本。
+* Reject-flipping sample：第一个被分类器接受的样本
+* M : 样本在测试器中的结果从恶意到良性所需经过的修改次数
+* R : 样本在检测器中的结果从拒绝到接受所需经过的修改次数
+* G = M – R</code></pre></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2019/08/15/Evading Classifiers by Morphing in the Dark/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-reportEvasionAttacks" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/06/reportEvasionAttacks/">Evasion attacks against machine learning at test time</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/08/06/reportEvasionAttacks/" class="article-date">
+  <time datetime="2019-08-06T09:43:56.000Z" itemprop="datePublished">2019-08-06</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-learning/">Machine learning</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="《Evasion-attacks-against-machine-learning-at-test-time》阅读笔记"><a href="#《Evasion-attacks-against-machine-learning-at-test-time》阅读笔记" class="headerlink" title="《Evasion attacks against machine learning at test time》阅读笔记"></a>《Evasion attacks against machine learning at test time》阅读笔记</h1><h2 id="出处"><a href="#出处" class="headerlink" title="出处"></a>出处</h2><p>Biggio B, Corona I, Maiorca D, et al. Evasion Attacks against Machine Learning at Test Time[M]// Machine Learning and Knowledge Discovery in Databases. Springer Berlin Heidelberg, 2013:387-402.</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>这篇13年的文章提出了一种简单但是有效的基于梯度的生成对抗样本的方法。<br>文章分为四个部分：</p>
+<ul>
+<li>提出对抗样本的问题，</li>
+<li>提出基于梯度下降的对抗样本生成方法，</li>
+<li>将提出的方法应用到手写数字识别任务并扩展 到恶意PDF识别任务，</li>
+<li>总结归纳部分</li>
+</ul>
+<p>&emsp;这一部分，作者提到为什么要做对抗攻击的研究。因为机器学习算法的安全性比较重要，因此这种学习系统的设计者应该更加积极主动地参与并阻止这种不良的对抗样本的影响。通俗来说，就是说要主动研究对抗攻击，从中找到能让模型更加稳定鲁棒的方法。</p>
+<p>上述需要三个步骤：<br>（这个可以认为是对抗攻击研究的三个步骤） </p>
+<ul>
+<li>在攻击者部署对抗样本之前找到学习模型的潜在攻击点 </li>
+<li>探索调研对应攻击对算法模型的不良影响 </li>
+<li>如果影响比较大，就需要设计合适的对应措施（也就是设计defence策略）</li></ul>
+        
+          <p class="article-more-link">
+            <a href="/2019/08/06/reportEvasionAttacks/#more">阅读全文</a>
           </p>
         
       
@@ -155,150 +337,21 @@
 </article>
 
   
-    <article id="post-reportEvasionAttacks" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/04/reportEvasionAttacks/">Evasion attacks against machine learning at test time</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/08/04/reportEvasionAttacks/" class="article-date">
-  <time datetime="2019-08-04T09:43:56.000Z" itemprop="datePublished">2019-08-04</time>
-</a>
-    
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/">machine learning</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h1 id="《Evasion-attacks-against-machine-learning-at-test-time》阅读笔记"><a href="#《Evasion-attacks-against-machine-learning-at-test-time》阅读笔记" class="headerlink" title="《Evasion attacks against machine learning at test time》阅读笔记"></a>《Evasion attacks against machine learning at test time》阅读笔记</h1><h2 id="出处"><a href="#出处" class="headerlink" title="出处"></a>出处</h2><p>Biggio B, Corona I, Maiorca D, et al. Evasion Attacks against Machine Learning at Test Time[M]// Machine Learning and Knowledge Discovery in Databases. Springer Berlin Heidelberg, 2013:387-402.</p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>这篇13年的文章提出了一种简单但是有效的基于梯度的生成对抗样本的方法。<br>文章分为四个部分：</p>
-<ul>
-<li>提出对抗样本的问题，</li>
-<li>提出基于梯度下降的对抗样本生成方法，</li>
-<li>将提出的方法应用到手写数字识别任务并扩展 到恶意PDF识别任务，</li>
-<li>总结归纳部分</li>
-</ul>
-<p>&emsp;这一部分，作者提到为什么要做对抗攻击的研究。因为机器学习算法的安全性比较重要，因此这种学习系统的设计者应该更加积极主动地参与并阻止这种不良的对抗样本的影响。通俗来说，就是说要主动研究对抗攻击，从中找到能让模型更加稳定鲁棒的方法。</p>
-<p>上述需要三个步骤：<br>（这个可以认为是对抗攻击研究的三个步骤） </p>
-<ul>
-<li>在攻击者部署对抗样本之前找到学习模型的潜在攻击点 </li>
-<li>探索调研对应攻击对算法模型的不良影响 </li>
-<li>如果影响比较大，就需要设计合适的对应措施（也就是设计defence策略）</li></ul>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/04/reportEvasionAttacks/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-Evading Classifiers by Morphing in the Dark" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/03/Evading Classifiers by Morphing in the Dark/">Evading Classifiers by Morphing in the Dark</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/08/03/Evading Classifiers by Morphing in the Dark/" class="article-date">
-  <time datetime="2019-08-03T09:43:56.000Z" itemprop="datePublished">2019-08-03</time>
-</a>
-    
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Evading-Classifiers/">Evading Classifiers</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h2 id="Evading-Classifiers-by-Morphing-in-the-Dark"><a href="#Evading-Classifiers-by-Morphing-in-the-Dark" class="headerlink" title="Evading Classifiers by Morphing in the Dark"></a>Evading Classifiers by Morphing in the Dark</h2><blockquote>
-<p> <code>Curtis Hung Dang -&gt;National University of Singapore</code><br><code>CCS’17, October 30-November 3, 2017, Dallas, TX, USA</code></p>
-</blockquote>
-<hr>
-<h3 id="中文标题："><a href="#中文标题：" class="headerlink" title="中文标题："></a>中文标题：</h3><blockquote>
-<p> <code>滥用恶意软件检测器中的PDF解析器</code> </p>
-</blockquote>
-<hr>
-<h3 id="Questions："><a href="#Questions：" class="headerlink" title="Questions："></a>Questions：</h3><blockquote>
-<ul>
-<li>1)    <strong>What is the problem?</strong><ul>
-<li>针对分类器逃逸，提出了一个<code>限制对手逃避分类器的模型—EvadeHC</code></li>
-</ul>
-</li>
-<li>2)    <strong>Why is the problem important?</strong><ul>
-<li>Learning-based systems have been shown to be vulnerable to evasion through adversarial data manipulation.</li>
-<li>通过对抗数据操作，基于学习的系统已被证明<code>容易逃避</code></li>
-</ul>
-</li>
-<li>3)    <strong>What is the old technique?</strong><ul>
-<li><code>机器学习</code>：在安全环境中有很多创新应用[19,22,28]，但是[7,11,12]表明它们可能<code>易于逃避</code>,<br>许伟林在NDSS2016年的会议中的一篇文章，<code>自动逃逸分类</code>器，研究了对基于学习的系统的逃避攻击，<br>可是有研究者讨论如果隐藏分类评分的<code>简单预防措施足以阻止这些攻击这些技术</code>，如何与现实中部署的真正黑匣子系统（例如内置于电子邮件服务中的恶意软件检测器）<code>相互作用</code>仍然是一个问题，因为它们不太可能揭示实值分数，而是仅暴露其最终决策</li>
-</ul>
-</li>
-<li>4)    <strong>What is the new technique?</strong><ul>
-<li>we propose an <code>effective hill-climbing</code> based evasion attack <code>EvadeHC</code><br>该解决方案会持续生成随机变形样本，<code>直至找到规避样本</code>。实证结果表明EvadeHC 在实验数据集上<code>获得100％的逃避率</code>，并且在执行成本方面<code>胜过基准解决方案高达80倍</code>，我们还将EvadeHC与逃避黑匣子分类器的最新技术进行比较，即使只能访问<code>检测器的二进制输出</code>，EvadeHC仍然<code>胜过以前的工作</code><br><img src="/.com//B4TA0YMP@L5P%60A4D5%60HTR.png" alt="Alt text"> <img src="/.com//1525338094177.png" alt="Alt text"><pre><code>* Malice-flipping sample：第一个被检测器检测为良性的样本。
-* Reject-flipping sample：第一个被分类器接受的样本
-* M : 样本在测试器中的结果从恶意到良性所需经过的修改次数
-* R : 样本在检测器中的结果从拒绝到接受所需经过的修改次数
-* G = M – R</code></pre></li>
-</ul>
-</li>
-</ul>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/03/Evading Classifiers by Morphing in the Dark/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
     <article id="post-yonah01" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/02/yonah01/">yonah01</a>
+      <a class="article-title" href="/2019/08/03/yonah01/">yonah01</a>
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/08/02/yonah01/" class="article-date">
-  <time datetime="2019-08-02T09:43:56.000Z" itemprop="datePublished">2019-08-02</time>
+    <a href="/2019/08/03/yonah01/" class="article-date">
+  <time datetime="2019-08-03T09:43:56.000Z" itemprop="datePublished">2019-08-03</time>
 </a>
     
     
@@ -314,7 +367,7 @@
         <h4 id="On-your-time"><a href="#On-your-time" class="headerlink" title="On your time"></a>On your time</h4><p>New York is 3 hours ahead of California,<br>but it does not make California slow.<br>Someone graduated at the age of 22,<br>but waited 5 years before securing a good job!<br>Someone became a CEO at 25,<br>and died at 50.<br>While another became a CEO at 50,<br>and lived to 90 years.<br>Someone is still single,<br>while someone else got married.<br>Obama retires at 55,<br>but Trump starts at 70.<br>Absolutely everyone in this world works based on their Time Zone.   </p>
         
           <p class="article-more-link">
-            <a href="/2019/08/02/yonah01/#more">阅读全文</a>
+            <a href="/2019/08/03/yonah01/#more">阅读全文</a>
           </p>
         
       
@@ -403,7 +456,7 @@
   <div class="widget-box">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/English/">English</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Evading-Classifiers/">Evading Classifiers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/">Machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Website-development/">Website development</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/">machine learning</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/English/">English</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/">Machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Website-development/">Website development</a></li></ul>
     </div>
   </div>
 
@@ -413,7 +466,7 @@
   <div class="widget-box">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/English/" style="font-size: 10px;">English</a> <a href="/tags/Evading-Classifiers/" style="font-size: 10px;">Evading Classifiers</a> <a href="/tags/Machine-learning/" style="font-size: 10px;">Machine learning</a> <a href="/tags/Website-development/" style="font-size: 10px;">Website development</a> <a href="/tags/machine-learning/" style="font-size: 10px;">machine learning</a>
+      <a href="/tags/English/" style="font-size: 10px;">English</a> <a href="/tags/Machine-learning/" style="font-size: 20px;">Machine learning</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Website-development/" style="font-size: 10px;">Website development</a>
     </div>
   </div>
 
@@ -434,23 +487,23 @@
       <ul>
         
           <li>
+            <a href="/2019/08/29/markdown-math/">markdown-math</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/28/web-bug/">dyld: Library not loaded: /usr/local/opt/icu4c/lib/libicui18n.63.dylib</a>
           </li>
         
           <li>
+            <a href="/2019/08/15/Evading Classifiers by Morphing in the Dark/">Evading Classifiers by Morphing in the Dark</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/06/reportEvasionAttacks/">Evasion attacks against machine learning at test time</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/06/机器学习算法之降维/">机器学习算法之降维(SVD，PCA)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/04/reportEvasionAttacks/">Evasion attacks against machine learning at test time</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/03/Evading Classifiers by Morphing in the Dark/">Evading Classifiers by Morphing in the Dark</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/02/yonah01/">yonah01</a>
           </li>
         
       </ul>
