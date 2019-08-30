@@ -12,7 +12,7 @@
   
   <meta property="og:type" content="website">
 <meta property="og:title" content="Yonah">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="https://yonahwang.github.io/index.html">
 <meta property="og:site_name" content="Yonah">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -146,7 +146,6 @@
         <h1 id="关于运行环境踩过的一些坑Some-bugs-in-the-code-environment"><a href="#关于运行环境踩过的一些坑Some-bugs-in-the-code-environment" class="headerlink" title="关于运行环境踩过的一些坑Some bugs in the code environment"></a>关于运行环境踩过的一些坑Some bugs in the code environment</h1><p>由于现在的软件包在不断的更新，而我们使用的很多软件包都是有依赖包的，这个时候就很容易在依赖包这里出现问题。<br>Since today’s software packages are constantly being updated, and many of the packages we use have dependencies, it’s easy to have problems with dependencies.</p>
 <h1 id="关于-dyld-的包依赖"><a href="#关于-dyld-的包依赖" class="headerlink" title="关于 dyld 的包依赖"></a>关于 dyld 的包依赖</h1><p>这个对使用的语言影响不大，在出现bug 的时候主要是看，报错的原因。然后检查自己的目录，软件包位置，软件版本等等。</p>
 <h2 id="报错的代码提示："><a href="#报错的代码提示：" class="headerlink" title="报错的代码提示："></a>报错的代码提示：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; dyld: Library not loaded: /usr/local/opt/icu4c/lib/libicui18n.63.dylib</span><br><span class="line">  Referenced from: /usr/local/bin/node</span><br><span class="line">  Reason: image not found</span><br><span class="line">Abort trap: 6</span><br></pre></td></tr></table></figure>
-
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2>
         
           <p class="article-more-link">
@@ -213,18 +212,66 @@
 </ul>
 </li>
 <li>4)    <strong>What is the new technique?</strong><ul>
-<li>we propose an <code>effective hill-climbing</code> based evasion attack <code>EvadeHC</code><br>该解决方案会持续生成随机变形样本，<code>直至找到规避样本</code>。实证结果表明EvadeHC 在实验数据集上<code>获得100％的逃避率</code>，并且在执行成本方面<code>胜过基准解决方案高达80倍</code>，我们还将EvadeHC与逃避黑匣子分类器的最新技术进行比较，即使只能访问<code>检测器的二进制输出</code>，EvadeHC仍然<code>胜过以前的工作</code><br><img src="/.com//B4TA0YMP@L5P%60A4D5%60HTR.png" alt="Alt text"> <img src="/.com//1525338094177.png" alt="Alt text"><pre><code>* Malice-flipping sample：第一个被检测器检测为良性的样本。
-* Reject-flipping sample：第一个被分类器接受的样本
-* M : 样本在测试器中的结果从恶意到良性所需经过的修改次数
-* R : 样本在检测器中的结果从拒绝到接受所需经过的修改次数
-* G = M – R</code></pre></li>
+<li>we propose an <code>effective hill-climbing</code> based evasion attack <code>EvadeHC</code><br>该解决方案会持续生成随机变形样本，<code>直至找到规避样本</code>。实证结果表明EvadeHC 在实验数据集上<code>获得100％的逃避率</code>，并且在执行成本方面<code>胜过基准解决方案高达80倍</code>，我们还将EvadeHC与逃避黑匣子分类器的最新技术进行比较，即使只能访问<code>检测器的二进制输出</code>，EvadeHC仍然<code>胜过以前的工作</code></li>
 </ul>
 </li>
 </ul>
 </blockquote>
+<pre><code>    * Malice-flipping sample：第一个被检测器检测为良性的样本。
+    * Reject-flipping sample：第一个被分类器接受的样本
+    * M : 样本在测试器中的结果从恶意到良性所需经过的修改次数
+    * R : 样本在检测器中的结果从拒绝到接受所需经过的修改次数
+    * G = M – R
+</code></pre>
         
           <p class="article-more-link">
             <a href="/2019/08/15/Evading Classifiers by Morphing in the Dark/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-机器学习算法之降维" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/08/机器学习算法之降维/">机器学习算法之降维(SVD，PCA)</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/08/08/机器学习算法之降维/" class="article-date">
+  <time datetime="2019-08-08T09:43:56.000Z" itemprop="datePublished">2019-08-08</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-learning/">Machine learning</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>降维方法有很多，而且分为线性降维和非线性降维，本篇文章主要讲解线性降维。<br>降维是机器学习中很重要的一种思想。在机器学习中经常会碰到一些高维的数据集，而在高维数据情形下会出现数据样本稀疏，距离计算等困难，这类问题是所有机器学习方法共同面临的严重问题，称之为“ 维度灾难 ”。另外在高维特征中容易出现特征之间的线性相关，这也就意味着有的特征是冗余存在的。基于这些问题，降维思想就出现了。</p>
+<p>　　</p>
+<h2 id="奇异值分解（SVD）"><a href="#奇异值分解（SVD）" class="headerlink" title="奇异值分解（SVD）"></a>奇异值分解（SVD）</h2><p>为什么先介绍SVD算法，因为在后面的PCA算法的实现用到了SVD算法。SVD算法不光可以用于降维算法中的特征分解，还可以用于推荐系统，以及自然语言处理等领域。是很多机器学习算法的基石。</p>
+<p>　　在线性代数中我们学过矩阵（在这里的矩阵必须是n×n的方阵）的特征分解，矩阵A和特征值、特征向量之间的关系如下</p>
+<img src="/.io//08/08/机器学习算法之降维/svd.png" title="This is an image">
+        
+          <p class="article-more-link">
+            <a href="/2019/08/08/机器学习算法之降维/#more">阅读全文</a>
           </p>
         
       
@@ -291,52 +338,6 @@
 </article>
 
   
-    <article id="post-机器学习算法之降维" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/06/机器学习算法之降维/">机器学习算法之降维(SVD，PCA)</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/08/06/机器学习算法之降维/" class="article-date">
-  <time datetime="2019-08-06T09:43:56.000Z" itemprop="datePublished">2019-08-06</time>
-</a>
-    
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-learning/">Machine learning</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>降维方法有很多，而且分为线性降维和非线性降维，本篇文章主要讲解线性降维。<br>降维是机器学习中很重要的一种思想。在机器学习中经常会碰到一些高维的数据集，而在高维数据情形下会出现数据样本稀疏，距离计算等困难，这类问题是所有机器学习方法共同面临的严重问题，称之为“ 维度灾难 ”。另外在高维特征中容易出现特征之间的线性相关，这也就意味着有的特征是冗余存在的。基于这些问题，降维思想就出现了。</p>
-<p>　　</p>
-<h2 id="奇异值分解（SVD）"><a href="#奇异值分解（SVD）" class="headerlink" title="奇异值分解（SVD）"></a>奇异值分解（SVD）</h2><p>为什么先介绍SVD算法，因为在后面的PCA算法的实现用到了SVD算法。SVD算法不光可以用于降维算法中的特征分解，还可以用于推荐系统，以及自然语言处理等领域。是很多机器学习算法的基石。</p>
-<p>　　在线性代数中我们学过矩阵（在这里的矩阵必须是n×n的方阵）的特征分解，矩阵A和特征值、特征向量之间的关系如下</p>
-<img src="/.com//08/06/机器学习算法之降维/svd.png" title="This is an image">
-        
-          <p class="article-more-link">
-            <a href="/2019/08/06/机器学习算法之降维/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
     <article id="post-yonah01" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
@@ -364,7 +365,7 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <h4 id="On-your-time"><a href="#On-your-time" class="headerlink" title="On your time"></a>On your time</h4><p>New York is 3 hours ahead of California,<br>but it does not make California slow.<br>Someone graduated at the age of 22,<br>but waited 5 years before securing a good job!<br>Someone became a CEO at 25,<br>and died at 50.<br>While another became a CEO at 50,<br>and lived to 90 years.<br>Someone is still single,<br>while someone else got married.<br>Obama retires at 55,<br>but Trump starts at 70.<br>Absolutely everyone in this world works based on their Time Zone.   </p>
+        <h4 id="On-your-time"><a href="#On-your-time" class="headerlink" title="On your time"></a>On your time</h4><p>New York is 3 hours ahead of California,<br>but it does not make California slow.<br>Someone graduated at the age of 22,<br>but waited 5 years before securing a good job!<br>Someone became a CEO at 25,<br>and died at 50.<br>While another became a CEO at 50,<br>and lived to 90 years.<br>Someone is still single,<br>while someone else got married.<br>Obama retires at 55,<br>but Trump starts at 70.<br>Absolutely everyone in this world works based on their Time Zone.<br></p>
         
           <p class="article-more-link">
             <a href="/2019/08/03/yonah01/#more">阅读全文</a>
@@ -406,16 +407,12 @@
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></div>
-
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
-
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
-
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
-
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
@@ -499,11 +496,11 @@
           </li>
         
           <li>
-            <a href="/2019/08/06/reportEvasionAttacks/">Evasion attacks against machine learning at test time</a>
+            <a href="/2019/08/08/机器学习算法之降维/">机器学习算法之降维(SVD，PCA)</a>
           </li>
         
           <li>
-            <a href="/2019/08/06/机器学习算法之降维/">机器学习算法之降维(SVD，PCA)</a>
+            <a href="/2019/08/06/reportEvasionAttacks/">Evasion attacks against machine learning at test time</a>
           </li>
         
       </ul>
@@ -561,6 +558,23 @@ document.body.write(script);
   
   <div class="mobile-nav-img  mobile-nav-bottom"></div>
 </nav>    
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>

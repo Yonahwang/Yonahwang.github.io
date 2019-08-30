@@ -14,18 +14,14 @@
 <meta name="keywords" content="Machine learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Evasion attacks against machine learning at test time">
-<meta property="og:url" content="http://yoursite.com/2019/08/06/reportEvasionAttacks/index.html">
+<meta property="og:url" content="https://yonahwang.github.io/2019/08/06/reportEvasionAttacks/index.html">
 <meta property="og:site_name" content="Yonah">
 <meta property="og:description" content="《Evasion attacks against machine learning at test time》阅读笔记出处Biggio B, Corona I, Maiorca D, et al. Evasion Attacks against Machine Learning at Test Time[M]// Machine Learning and Knowledge Discovery i">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/.com//ea2.png">
-<meta property="og:image" content="http://yoursite.com/.com//ea2.png">
-<meta property="og:image" content="http://yoursite.com/.com//ea1.png">
 <meta property="og:updated_time" content="2019-08-29T03:24:43.363Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Evasion attacks against machine learning at test time">
 <meta name="twitter:description" content="《Evasion attacks against machine learning at test time》阅读笔记出处Biggio B, Corona I, Maiorca D, et al. Evasion Attacks against Machine Learning at Test Time[M]// Machine Learning and Knowledge Discovery i">
-<meta name="twitter:image" content="http://yoursite.com/.com//ea2.png">
   
     <link rel="alternate" href="/atom.xml" title="Yonah" type="application/atom+xml">
   
@@ -115,7 +111,6 @@
 <li>在攻击者部署对抗样本之前找到学习模型的潜在攻击点 </li>
 <li>探索调研对应攻击对算法模型的不良影响 </li>
 <li>如果影响比较大，就需要设计合适的对应措施（也就是设计defence策略）<a id="more"></a>
-
 </li>
 </ul>
 <h2 id="测试时的最佳逃逸"><a href="#测试时的最佳逃逸" class="headerlink" title="测试时的最佳逃逸"></a>测试时的最佳逃逸</h2><ol>
@@ -142,7 +137,7 @@
 </ul>
 </li>
 </ul>
-<ol start="4">
+<ol>
 <li><p>过去的研究认为对抗者可以任意修改输入数据，构造对抗样本。但实际上这些都是有限制的，并且在实际应用场景下，这些限制会更加严格。</p>
 </li>
 <li><p>接下来讨论两种情况下的攻击场景：</p>
@@ -151,28 +146,26 @@
 <li>Limited Knowledge：不知道学习好的分类器和训练数据，因此不能直接计算g(x)，这个g（x）指的是分类器的损失函数。但是，这种情况下，会假设对抗样本可以能够收集到替代的数据集，这些数据集和真实数据集具有同样的分布，都是从一个更大的数据集中采样得到。<br>【因为对抗攻击希望用替代数据得到的映射函数和真实模型具有尽量相同的特征，因此在训练过程中，如果真实模型的输出能够得到，那么可以利用这个输出来训练替代模型。】</li>
 </ul>
 </li>
-<li><p>构建对抗攻击的问题，就是一个非线性的优化问题，对于这类问题通常有gradient descent, or quadratic techniques such as Newton’s method, BFGS, or L-BFGS等方法。</p>
-</li>
-<li><p>攻击策略 Attack strategy<br>文中提出的攻击方法的核心思想是，找到一个目标恶意样本，优化过程就是找到一个样本 $ x^* $,最小化g(.) 和$\breve{g}(.)$，并且这个样本和目标恶意样本的差别不能太大，也就是下面这个公式：</p>
-</li>
+<li>构建对抗攻击的问题，就是一个非线性的优化问题，对于这类问题通常有gradient descent, or quadratic techniques such as Newton’s method, BFGS, or L-BFGS等方法。</li>
+<li>攻击策略 Attack strategy<br>文中提出的攻击方法的核心思想是，找到一个目标恶意样本，优化过程就是找到一个样本 $ x^* $,最小化g(.) 和$\breve{g}(.)$，并且这个样本和目标恶意样本的差别不能太大，也就是下面这个公式：</li>
 </ol>
 <center>
 
-<p><img src="/.com//ea2.png" alt="avatar"></p>
+![avatar](ea2.png)
 </center>
 
 <p>&emsp;而这是一个非线性的优化问题。要优化这个问题，可以使用的方法有：gradient descent, Newton’s method, BFGS, 或者 L-BFGS。</p>
 <h2 id="算法-Algorithm"><a href="#算法-Algorithm" class="headerlink" title="算法 Algorithm"></a>算法 Algorithm</h2><p>接下来介绍本文中用到的梯度下降法（gradient descent）：<br>首先，根据上文提到的，优化目标函数是：</p>
 <center>
 
-<p><img src="/.com//ea2.png" alt="avatar"></p>
+![avatar](ea2.png)
 </center>
 
 <p>但是在实际应用中，由于分类器目标函数的特性，这个函数可能不是凸函数，因此局部优化可能会造成攻击的失败。因此，当传统的梯度下降方法得到了一些对抗样本时，攻击者对于这个样本是否能躲开分类器的识别，是没有信心的。因此，为了增加攻击成功的可能性，提高优化效率，论文提出了一个新的目标优化问题，即是攻击者构造的攻击点应该尽可能地集中在合法输入点附近，也就是正样本密度比较大的区域。因此，给目标函数引入了一个新的成分——用一个密度估计器来预测p(x|y=-1)。加入了这个部分，可以让算法构建出来的对抗样本模仿已知的正样本的特征（也就是在特征空间上与已经有的合法的输入尽可能类似）。这个密度估计器，文中称之为kernel density estimators（KDE）。</p>
 <p>对应的公式表示如下： </p>
 <center>
 
-<p><img src="/.com//ea1.png" alt="avatar"></p>
+![avatar](ea1.png)
 </center>
 
 
@@ -192,11 +185,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/08/15/Evading Classifiers by Morphing in the Dark/" id="article-nav-newer" class="article-nav-link-wrap">
+      <a href="/2019/08/08/机器学习算法之降维/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption"></strong>
         <div class="article-nav-title">
           
-            Evading Classifiers by Morphing in the Dark
+            机器学习算法之降维(SVD，PCA)
           
         </div>
       </a>
@@ -204,8 +197,8 @@
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/08/06/机器学习算法之降维/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">机器学习算法之降维(SVD，PCA)</div>
+      <a href="/2019/08/03/yonah01/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">yonah01</div>
         <strong class="article-nav-caption"></strong>
       </a>
     
@@ -300,11 +293,11 @@ gitment.render('gitmentContainer')
           </li>
         
           <li>
-            <a href="/2019/08/06/reportEvasionAttacks/">Evasion attacks against machine learning at test time</a>
+            <a href="/2019/08/08/机器学习算法之降维/">机器学习算法之降维(SVD，PCA)</a>
           </li>
         
           <li>
-            <a href="/2019/08/06/机器学习算法之降维/">机器学习算法之降维(SVD，PCA)</a>
+            <a href="/2019/08/06/reportEvasionAttacks/">Evasion attacks against machine learning at test time</a>
           </li>
         
       </ul>
@@ -362,6 +355,23 @@ document.body.write(script);
   
   <div class="mobile-nav-img  mobile-nav-bottom"></div>
 </nav>    
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>

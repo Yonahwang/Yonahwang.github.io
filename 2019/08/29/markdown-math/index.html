@@ -14,11 +14,11 @@
 <meta name="keywords" content="Markdown">
 <meta property="og:type" content="article">
 <meta property="og:title" content="markdown-math">
-<meta property="og:url" content="http://yoursite.com/2019/08/29/markdown-math/index.html">
+<meta property="og:url" content="https://yonahwang.github.io/2019/08/29/markdown-math/index.html">
 <meta property="og:site_name" content="Yonah">
 <meta property="og:description" content="Markdown 数学公式集1. 如何插入公式 行中公式(放在文中与其它文字混编)可以用如下方法表示： $ 数学公式 $   独立公式可以用如下方法表示： $ 数学公式 $   自动编号的公式可以用如下方法表示：  2. 如何输入上下标">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-29T08:00:25.183Z">
+<meta property="og:updated_time" content="2019-08-29T08:53:07.957Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="markdown-math">
 <meta name="twitter:description" content="Markdown 数学公式集1. 如何插入公式 行中公式(放在文中与其它文字混编)可以用如下方法表示： $ 数学公式 $   独立公式可以用如下方法表示： $ 数学公式 $   自动编号的公式可以用如下方法表示：  2. 如何输入上下标">
@@ -112,26 +112,25 @@
 <p>^ 表示上标，_ 表示下标。如果上下标的内容多于一个字符，需要用 {} 将这些内容括成一个整体。上下标可以嵌套，也可以同时使用。   </p>
 <ul>
 <li>例子：<blockquote>
-<p>‘$$ x^{y^z}=(1+{\rm e}^x)^{-2xy^w} $$’</p>
+<p>‘<script type="math/tex">x^{y^z}=(1+{\rm e}^x)^{-2xy^w}</script>‘</p>
 </blockquote>
 </li>
 <li>显示：<blockquote>
-<p>$$ x^{y^z}=(1+{\rm e}^x)^{-2xy^w} $$</p>
-</blockquote>
+<script type="math/tex; mode=display">x^{y^z}=(1+{\rm e}^x)^{-2xy^w}</script></blockquote>
 </li>
 </ul>
 <p>另外，如果要在左右两边都有上下标，可以用 \sideset 命令</p>
 <ul>
 <li>例子：<blockquote>
-<p>‘$$ \sideset{^1_2}{^3_4}\bigotimes $$’</p>
+<p>‘<script type="math/tex">\sideset{^1_2}{^3_4}\bigotimes</script>‘</p>
 </blockquote>
 </li>
 <li>显示：<blockquote>
-<p>$$ \sideset{^1_2}{^3_4}\bigotimes $$</p>
-</blockquote>
+<script type="math/tex; mode=display">\sideset{^1_2}{^3_4}\bigotimes</script></blockquote>
 </li>
 </ul>
 <h2 id="3-如何输入括号和分隔符"><a href="#3-如何输入括号和分隔符" class="headerlink" title="3. 如何输入括号和分隔符"></a>3. 如何输入括号和分隔符</h2><p>()、[]和|表示符号本身，使用 ”\{\}“ 来表示 {}。当要显示大号的括号或分隔符时，要用 \left 和 \right 命令。<br>一些特殊的括号：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -139,131 +138,124 @@
 <th>显示</th>
 </tr>
 </thead>
-<tbody><tr>
-<td>$$\langle表达式\rangle$$</td>
+<tbody>
+<tr>
+<td><script type="math/tex">\langle表达式\rangle</script></td>
 <td>⟨表达式⟩</td>
 </tr>
 <tr>
-<td>$$\lceil表达式\rceil$$</td>
+<td><script type="math/tex">\lceil表达式\rceil</script></td>
 <td>⌈表达式⌉</td>
 </tr>
 <tr>
-<td>$$\lfloor表达式\rfloor$$</td>
+<td><script type="math/tex">\lfloor表达式\rfloor</script></td>
 <td>⌊表达式⌋</td>
 </tr>
 <tr>
-<td>$$\lbrace表达式\rbrace$$</td>
+<td><script type="math/tex">\lbrace表达式\rbrace</script></td>
 <td>{表达式}</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>例子：<blockquote>
-<p>‘$$ f(x,y,z) = 3y^2z \left( 3+\frac{7x+5}{1+y^2} \right) $$’</p>
+<p>‘<script type="math/tex">f(x,y,z) = 3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)</script>‘</p>
 </blockquote>
 </li>
 <li>显示：<blockquote>
-<p>$$ f(x,y,z) = 3y^2z \left( 3+\frac{7x+5}{1+y^2} \right) $$</p>
-</blockquote>
+<script type="math/tex; mode=display">f(x,y,z) = 3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)</script></blockquote>
 </li>
 </ul>
 <h2 id="4-如何输入分数"><a href="#4-如何输入分数" class="headerlink" title="4. 如何输入分数"></a>4. 如何输入分数</h2><p>通常使用 \frac {分子} {分母}命令产生一个分数\frac {分子} {分母}，分数可嵌套。<br>便捷情况可直接输入 \frac ab来快速生成一个\frac ab。<br>如果分式很复杂，亦可使用 分子 \over 分母 命令，此时分数仅有一层。</p>
 <ul>
 <li>例子：<blockquote>
-<p>‘$$\frac{a-1}{b-1} \quad and \quad {a+1\over b+1}$$’</p>
+<p>‘<script type="math/tex">\frac{a-1}{b-1} \quad and \quad {a+1\over b+1}</script>‘</p>
 </blockquote>
 </li>
 <li>显示：<blockquote>
-<p>$$\frac{a-1}{b-1} \quad and \quad {a+1\over b+1}$$</p>
-</blockquote>
+<script type="math/tex; mode=display">\frac{a-1}{b-1} \quad and \quad {a+1\over b+1}</script></blockquote>
 </li>
 </ul>
 <h2 id="5-如何输入开方"><a href="#5-如何输入开方" class="headerlink" title="5. 如何输入开方"></a>5. 如何输入开方</h2><p>使用 \sqrt [根指数，省略时为2] {被开方数} 命令输入开方。</p>
 <ul>
 <li>例子：<blockquote>
-<p>‘$$\sqrt{2} \quad and \quad \sqrt[n]{3}$$’</p>
+<p>‘<script type="math/tex">\sqrt{2} \quad and \quad \sqrt[n]{3}</script>‘</p>
 </blockquote>
 </li>
 <li>显示：<blockquote>
-<p>$$\sqrt{2} \quad and \quad \sqrt[n]{3}$$</p>
-</blockquote>
+<script type="math/tex; mode=display">\sqrt{2} \quad and \quad \sqrt[n]{3}</script></blockquote>
 </li>
 </ul>
 <h2 id="6-如何输入省略号"><a href="#6-如何输入省略号" class="headerlink" title="6. 如何输入省略号"></a>6. 如何输入省略号</h2><p>数学公式中常见的省略号有两种，\ldots 表示与文本底线对齐的省略号，\cdots 表示与文本中线对齐的省略号。</p>
 <ul>
 <li>例子：<blockquote>
-<p>‘$$f(x_1,x_2,\underbrace{\ldots}<em>{\rm ldots} ,x_n) = x_1^2 + x_2^2 + \underbrace{\cdots}</em>{\rm cdots} + x_n^2$$’</p>
+<p>‘<script type="math/tex">f(x_1,x_2,\underbrace{\ldots}_{\rm ldots} ,x_n) = x_1^2 + x_2^2 + \underbrace{\cdots}_{\rm cdots} + x_n^2</script>‘</p>
 </blockquote>
 </li>
 <li>显示：<blockquote>
-<p>$$f(x_1,x_2,\underbrace{\ldots}<em>{\rm ldots} ,x_n) = x_1^2 + x_2^2 + \underbrace{\cdots}</em>{\rm cdots} + x_n^2$$</p>
-</blockquote>
+<script type="math/tex; mode=display">f(x_1,x_2,\underbrace{\ldots}_{\rm ldots} ,x_n) = x_1^2 + x_2^2 + \underbrace{\cdots}_{\rm cdots} + x_n^2</script></blockquote>
 </li>
 </ul>
 <h2 id="7-如何输入矢量"><a href="#7-如何输入矢量" class="headerlink" title="7. 如何输入矢量"></a>7. 如何输入矢量</h2><p>使用 \vec{矢量} 来自动产生一个矢量。也可以使用 \overrightarrow 等命令自定义字母上方的符号。</p>
 <ul>
 <li>例子：<blockquote>
-<p>‘$$\vec{a} \cdot \vec{b}=0$$’</p>
+<p>‘<script type="math/tex">\vec{a} \cdot \vec{b}=0</script>‘</p>
 </blockquote>
 </li>
 <li>显示：<blockquote>
-<p>$$\vec{a} \cdot \vec{b}=0$$</p>
-</blockquote>
+<script type="math/tex; mode=display">\vec{a} \cdot \vec{b}=0</script></blockquote>
 </li>
 </ul>
 <hr>
 <ul>
 <li>例子：<blockquote>
-<p>‘$$\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow{xy}$$’</p>
+<p>‘<script type="math/tex">\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow{xy}</script>‘</p>
 </blockquote>
 </li>
 <li>显示：<blockquote>
-<p>$$\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow{xy}$$</p>
-</blockquote>
+<script type="math/tex; mode=display">\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow{xy}</script></blockquote>
 </li>
 </ul>
 <h2 id="8-如何输入积分"><a href="#8-如何输入积分" class="headerlink" title="8. 如何输入积分"></a>8. 如何输入积分</h2><p>使用 \int_积分下限^积分上限 {被积表达式} 来输入一个积分。</p>
 <ul>
 <li><p>例子：</p>
 <blockquote>
-<p>‘$$\int_0^1 {x^2} ,{\rm d}x$$’</p>
+<p>‘<script type="math/tex">\int_0^1 {x^2} \,{\rm d}x</script>‘</p>
 </blockquote>
 </li>
 <li><p>显示：</p>
 <blockquote>
-<p>$$\int_0^1 {x^2} ,{\rm d}x$$</p>
-</blockquote>
+<script type="math/tex; mode=display">\int_0^1 {x^2} \,{\rm d}x</script></blockquote>
 </li>
 </ul>
 <h2 id="9-如何输入极限运算"><a href="#9-如何输入极限运算" class="headerlink" title="9. 如何输入极限运算"></a>9. 如何输入极限运算</h2><p>使用\lim_{变量 \to 表达式} 表达式 来输入一个极限。如有需求，可以更改 \to 符号至任意符号。</p>
 <ul>
 <li><p>例子：</p>
 <blockquote>
-<p>‘$$ \lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)} $$’</p>
+<p>‘<script type="math/tex">\lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)}</script>‘</p>
 </blockquote>
 </li>
 <li><p>显示：</p>
 <blockquote>
-<p>$$ \lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)} $$</p>
-</blockquote>
+<script type="math/tex; mode=display">\lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)}</script></blockquote>
 </li>
 </ul>
 <h2 id="10-如何输入累加、累积运算"><a href="#10-如何输入累加、累积运算" class="headerlink" title="10. 如何输入累加、累积运算"></a>10. 如何输入累加、累积运算</h2><p>使用 \sum_{下标表达式}^{上标表达式} {累加表达式} 来输入一个累加。<br>与之类似，使用 \prod \bigcup \bigcap 来分别输入累乘、并集和交集。<br>此类符号在行内显示时上下标表达式将会移至右上角和右下角。</p>
 <ul>
 <li><p>例子：</p>
 <blockquote>
-<p>‘$$\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R$$’</p>
+<p>‘<script type="math/tex">\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R</script>‘</p>
 </blockquote>
 </li>
 <li><p>显示：</p>
 <blockquote>
-<p>$$\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R$$</p>
-</blockquote>
+<script type="math/tex; mode=display">\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R</script></blockquote>
 </li>
 </ul>
 <h2 id="11．如何输入希腊字母"><a href="#11．如何输入希腊字母" class="headerlink" title="11．如何输入希腊字母"></a>11．如何输入希腊字母</h2><p>输入 \小写希腊字母英文全称 和 \首字母大写希腊字母英文全称  来分别输入小写和大写希腊字母。<br>对于大写希腊字母与现有字母相同的，直接输入大写字母即可。<br>输入 | 显示 | 输入| 显示<br>-|-|-|-<br>\alpha|𝛼    |A    |𝐴<br>\beta    |𝛽    |B|    𝐵<br>\gamma|    𝛾|    \Gamma|    Γ<br>\delta|    𝛿    |\Delta|    Δ<br>\epsilon|    𝜖|    E    |𝐸<br>\zeta|    𝜁|    Z    |𝑍<br>\eta|    𝜂|    H    |𝐻<br>\theta|    𝜃|    \Theta    |Θ<br>\iota|    𝜄|    I|    𝐼<br>\kappa|    𝜅    |K|    𝐾<br>\lambda    |𝜆    |\Lambda|    Λ<br>\nu    |𝜈|    N|    𝑁<br>\mu    |𝜇|    M|    𝑀<br>\xi|    𝜉    |\Xi|    Ξ<br>o|    𝑜    |O|    𝑂<br>\pi|    𝜋|    \Pi|    Π<br>\rho|    𝜌|    P|    𝑃<br>\sigma|    𝜎|    \Sigma|    Σ<br>\tau|    𝜏|    T    |𝑇<br>\upsilon|    𝜐|    \Upsilon|    Υ<br>\phi|𝜙    |\Phi    |Φ<br>\chi|𝜒|X    |𝑋<br>\psi|𝜓|\Psi|    Ψ<br>\omega|    𝜔|    \Omega|    Ω</p>
 <h2 id="12-大括号和行标的使用"><a href="#12-大括号和行标的使用" class="headerlink" title="12.大括号和行标的使用"></a>12.大括号和行标的使用</h2><p>使用 \left 和 \right 来创建自动匹配高度的 (圆括号)，[方括号] 和 {花括号} 。<br>在每个公式末尾前使用 \tag{行标} 来实现行标。<br>例子：</p>
 <blockquote>
-</blockquote>
 <pre><code>f\left(
 \left[ 
     \frac{
@@ -276,18 +268,24 @@
     }+a
 \right]^{3/2}
 \right)
-\tag{行标}</code></pre><ul>
+\tag{行标}
+</code></pre></blockquote>
+<ul>
 <li>显示：<blockquote>
-<p>$$<br>  f\left(<br>  \left[ </p>
-<pre><code>\frac{
-1+\left\{x,y\right\}
-}{
-\left(
-    \frac{x}{y}+\frac{y}{x}
-\right)
-\left(u+1\right)
-}+a</code></pre><p>  \right]^{3/2}<br>  \right)<br>  \tag{行标}<br>  $$</p>
-</blockquote>
+<script type="math/tex; mode=display">
+  f\left(
+  \left[ 
+      \frac{
+      1+\left\{x,y\right\}
+      }{
+      \left(
+          \frac{x}{y}+\frac{y}{x}
+      \right)
+      \left(u+1\right)
+      }+a
+  \right]^{3/2}
+  \right)
+  \tag{行标}</script></blockquote>
 </li>
 </ul>
 <p>小技巧：</p>
@@ -296,13 +294,13 @@
 <p>“\smash{\displaystyle\max_{0 \leq q \leq n-1}} f(q) \le” </p>
 </blockquote>
 </li>
-<li>显示：<br>$$\smash{\displaystyle\max_{0 \leq q \leq n-1}} f(q) \le n$$ </li>
+<li>显示：<script type="math/tex; mode=display">\smash{\displaystyle\max_{0 \leq q \leq n-1}} f(q) \le n</script></li>
 <li>公式<blockquote>
 <p>“f(x + \epsilon) \approx f(x) + f’(x) \epsilon + \mathcal{O}(\epsilon^2).”</p>
 </blockquote>
 </li>
 <li>显示:<blockquote>
-<p>$$f(x + \epsilon) \approx f(x) + f’(x) \epsilon + \mathcal{O}(\epsilon^2).$$<br>求导符号使用 “\text{d}x”, 即：$\text{d}x$</p>
+<script type="math/tex; mode=display">f(x + \epsilon) \approx f(x) + f'(x) \epsilon + \mathcal{O}(\epsilon^2).</script><p>求导符号使用 “\text{d}x”, 即：$\text{d}x$</p>
 </blockquote>
 </li>
 </ul>
@@ -420,11 +418,11 @@ gitment.render('gitmentContainer')
           </li>
         
           <li>
-            <a href="/2019/08/06/reportEvasionAttacks/">Evasion attacks against machine learning at test time</a>
+            <a href="/2019/08/08/机器学习算法之降维/">机器学习算法之降维(SVD，PCA)</a>
           </li>
         
           <li>
-            <a href="/2019/08/06/机器学习算法之降维/">机器学习算法之降维(SVD，PCA)</a>
+            <a href="/2019/08/06/reportEvasionAttacks/">Evasion attacks against machine learning at test time</a>
           </li>
         
       </ul>
@@ -482,6 +480,23 @@ document.body.write(script);
   
   <div class="mobile-nav-img  mobile-nav-bottom"></div>
 </nav>    
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>
