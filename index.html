@@ -12,7 +12,7 @@
   
   <meta property="og:type" content="website">
 <meta property="og:title" content="Yonah">
-<meta property="og:url" content="http://yonahwang.github.io/index.html">
+<meta property="og:url" content="https://yonahwang.github.io/index.html">
 <meta property="og:site_name" content="Yonah">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -272,7 +272,7 @@
 <p>　　</p>
 <h2 id="奇异值分解（SVD）"><a href="#奇异值分解（SVD）" class="headerlink" title="奇异值分解（SVD）"></a>奇异值分解（SVD）</h2><p>为什么先介绍SVD算法，因为在后面的PCA算法的实现用到了SVD算法。SVD算法不光可以用于降维算法中的特征分解，还可以用于推荐系统，以及自然语言处理等领域。是很多机器学习算法的基石。</p>
 <p>　　在线性代数中我们学过矩阵（在这里的矩阵必须是n×n的方阵）的特征分解，矩阵A和特征值、特征向量之间的关系如下</p>
-<img src="/.io//08/08/机器学习算法之降维/svd.png" title="This is an image">
+<p><img src="/2019/08/08/机器学习算法之降维/svd.png" alt="avatar"><br></p>
         
           <p class="article-more-link">
             <a href="/2019/08/08/机器学习算法之降维/#more">阅读全文</a>
@@ -578,7 +578,24 @@ document.body.write(script);
     });
 </script>
 <!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 </body>
 </html>

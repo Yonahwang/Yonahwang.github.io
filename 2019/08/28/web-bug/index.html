@@ -14,7 +14,7 @@
 <meta name="keywords" content="Website development">
 <meta property="og:type" content="article">
 <meta property="og:title" content="dyld: Library not loaded: &#x2F;usr&#x2F;local&#x2F;opt&#x2F;icu4c&#x2F;lib&#x2F;libicui18n.63.dylib">
-<meta property="og:url" content="http://yonahwang.github.io/2019/08/28/web-bug/index.html">
+<meta property="og:url" content="https://yonahwang.github.io/2019/08/28/web-bug/index.html">
 <meta property="og:site_name" content="Yonah">
 <meta property="og:description" content="关于运行环境踩过的一些坑Some bugs in the code environment由于现在的软件包在不断的更新，而我们使用的很多软件包都是有依赖包的，这个时候就很容易在依赖包这里出现问题。Since today’s software packages are constantly being updated, and many of the packages we use have dep">
 <meta property="og:locale" content="default">
@@ -318,7 +318,24 @@ document.body.write(script);
     });
 </script>
 <!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 </body>
 </html>
