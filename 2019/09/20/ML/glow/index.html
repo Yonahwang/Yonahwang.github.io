@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+
+  
+  <title>glow Generative Flow with Invertible 1*1 Convolutions | Yonah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="《Glow : Generative Flow with Invertible 1*1 Convolutions》 Note 论文下载地址：https://d4mucfpksywv.cloudfront.net/research-covers/glow/paper/glow.pdf 代码地址： https://github.com/openai/glow  Abstract基于流的生成模型由于以下">
+<meta name="keywords" content="Machine learning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="glow Generative Flow with Invertible 1*1 Convolutions">
+<meta property="og:url" content="https://yonahwang.github.io/2019/09/20/ML/glow/index.html">
+<meta property="og:site_name" content="Yonah">
+<meta property="og:description" content="《Glow : Generative Flow with Invertible 1*1 Convolutions》 Note 论文下载地址：https://d4mucfpksywv.cloudfront.net/research-covers/glow/paper/glow.pdf 代码地址： https://github.com/openai/glow  Abstract基于流的生成模型由于以下">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://yonahwang.github.io/2019/09/20/ML/glow/flow-mode1.png">
+<meta property="og:image" content="https://yonahwang.github.io/2019/09/20/ML/glow/folw-a.png">
+<meta property="og:image" content="https://yonahwang.github.io/2019/09/20/ML/glow/figure01.png">
+<meta property="og:updated_time" content="2019-09-24T08:27:10.660Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="glow Generative Flow with Invertible 1*1 Convolutions">
+<meta name="twitter:description" content="《Glow : Generative Flow with Invertible 1*1 Convolutions》 Note 论文下载地址：https://d4mucfpksywv.cloudfront.net/research-covers/glow/paper/glow.pdf 代码地址： https://github.com/openai/glow  Abstract基于流的生成模型由于以下">
+<meta name="twitter:image" content="https://yonahwang.github.io/2019/09/20/ML/glow/flow-mode1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Yonah" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.webp">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <script>
+  let antiquityStorage = window.sessionStorage.getItem('antiquitySessionStorage');
+  if (antiquityStorage == '' || antiquityStorage == null) {
+    var antiquityLoader = '<div id="loaderbox"><div class="loader"><div class="load-roll"><div class="load-top"></div><div class="load-right"></div><div class="load-bottom"></div></div></div></div>';
+    document.write(antiquityLoader);
+    document.body.style.overflow = 'hidden'
+  }
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+</html>
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-ML/glow" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      glow Generative Flow with Invertible 1*1 Convolutions
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/09/20/ML/glow/" class="article-date">
+  <time datetime="2019-09-20T08:15:14.000Z" itemprop="datePublished">2019-09-20</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-learning/">Machine learning</a></li></ul>
+
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="《Glow-Generative-Flow-with-Invertible-1-1-Convolutions》-Note"><a href="#《Glow-Generative-Flow-with-Invertible-1-1-Convolutions》-Note" class="headerlink" title="《Glow : Generative Flow with Invertible 1*1 Convolutions》 Note"></a>《Glow : Generative Flow with Invertible 1*1 Convolutions》 Note</h1><ul>
+<li>论文下载地址：<a href="https://d4mucfpksywv.cloudfront.net/research-covers/glow/paper/glow.pdf" target="_blank" rel="noopener">https://d4mucfpksywv.cloudfront.net/research-covers/glow/paper/glow.pdf</a></li>
+<li>代码地址： <a href="https://github.com/openai/glow" target="_blank" rel="noopener">https://github.com/openai/glow</a></li>
+</ul>
+<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>基于流的生成模型由于以下原因而具有概念上的吸引力：精确对数似然性的可跟踪性、精确的变量推断的可跟踪性、训练和综合的可并行性。</p>
+<p>在这篇文章中，作者提出了基于可逆的1*1卷积网络的生成流模型，在标准基准数据集上的对数似然性有了显著提升。</p>
+<p>优化的模型可以有效逼真地对大图像进行合成和操作。</p>
+<ul>
+<li>Note： Log-likelihood    </li>
+</ul>
+<blockquote>
+<p>似然函数是在给定输出x时，参数b的似然函数L(b|x)在数值上等于给定b时X=x的概率，L(b|x)=P(X=x|b)</p>
+<p>对数似然函数是对似然函数求对数，在不改变函数增减性的基础上来简化计算。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>在机器学习领域还未解决的两大主要问题：</p>
+<p>（1）数据效率：从少量数据中学习的能力；</p>
+<p>（2）一般化：当目标或者是上下文改变时的鲁棒性</p>
+<blockquote>
+<p>鲁棒性：指控制系统在一定（结构、大小）参数的摄动下，维持其他某些性能的特性。</p>
+</blockquote>
+<h3 id="生成模型解决这些问题的方法："><a href="#生成模型解决这些问题的方法：" class="headerlink" title="生成模型解决这些问题的方法："></a>生成模型解决这些问题的方法：</h3><p>（1）学习真实的世界模型</p>
+<p>（2）人工监督很少或者无监督时，从输入中学习有意义的特征</p>
+<p>生成建模学科的研究在基于似然的模型和GANs上取得了巨大的飞跃</p>
+<hr>
+<h2 id="实验思路"><a href="#实验思路" class="headerlink" title="实验思路"></a>实验思路</h2><h3 id="1-基于似然的方法"><a href="#1-基于似然的方法" class="headerlink" title="1. 基于似然的方法"></a>1. 基于似然的方法</h3><h4 id="（1）自回归模型（AR模型）"><a href="#（1）自回归模型（AR模型）" class="headerlink" title="（1）自回归模型（AR模型）"></a>（1）自回归模型（AR模型）</h4><p>是统计上一种处理时间序列的方法，例如，用{\color{Green} x_{1}-x_{t-1}}来预测{\color{Green} x_{t}}的表现，并假设它们为一线性关系，在这个方法中是用x来预测x，所以叫做自回归。函数表达式为：$\color{red} x_{t}=c+\sum_{i=1}^{p}\psi _{i}x_{t-i}+\varepsilon _{t}$</p>
+<p>自回归模型的优点是比较简单，缺点是合成时可并行性存在限制，计算长度和数据维度成比例，若处理大型图像或者视频比较麻烦。</p>
+<h4 id="（2）变分自编码器（VAEs）"><a href="#（2）变分自编码器（VAEs）" class="headerlink" title="（2）变分自编码器（VAEs）"></a>（2）变分自编码器（VAEs）</h4><p>通过查阅资料，我所理解的变分自编码器的基本思路是：将输入数据x通过编码器计算得到其均值和方差，然后将方差添加噪声后强度接近于1，均值接近于0，构成正态分布，然后从此正态分布中采样得到z，将z通过解码器后得到x’，令x’无限逼近于x。</p>
+<h4 id="（3）NICE-非线性独立分量估计"><a href="#（3）NICE-非线性独立分量估计" class="headerlink" title="（3）NICE 非线性独立分量估计"></a>（3）NICE 非线性独立分量估计</h4><p>NICE是为了对复杂的高维数据进行非线性变换，将高维数据映射到潜在空间，产生独立的潜在变量</p>
+<h4 id="（4）RealNVP-实值非体积保持"><a href="#（4）RealNVP-实值非体积保持" class="headerlink" title="（4）RealNVP 实值非体积保持"></a>（4）RealNVP 实值非体积保持</h4><p>RealNVP是在NICE的基础上，将分层和组合变换的思想进一步延伸，采用了仿射耦合和多尺度框架，所谓多尺度框架就是通过不同尺度、潜在变量映射到最终的潜在空间。</p>
+<h3 id="2-生成对抗性网络GAN"><a href="#2-生成对抗性网络GAN" class="headerlink" title="2. 生成对抗性网络GAN"></a>2. 生成对抗性网络GAN</h3><p>GAN是无监督学习的范畴，是由生成模型和判别模型的相互博弈学习来产生相当好的输出，生成模型用来接收随机噪声，通过这些噪声生成图片，判别模型是用来判断生成的图片是不是真实的，输出图片是真实图片的概率。训练时，生成网络G的目标就是尽量生成真实的图片去欺骗判别网络D，而D的目标就是尽量把G生成的图片和真实的图片分开。</p>
+<ul>
+<li>应用：GAN常用于图像生成，如超分辨率任务、语义分割等，数据增强，数据分类等。</li>
+</ul>
+<h2 id="Generative-Flow"><a href="#Generative-Flow" class="headerlink" title="Generative Flow"></a>Generative Flow</h2><p>Flow模型的多尺度结构图和每一步结构图如下：</p>
+<p><img src="/2019/09/20/ML/glow/flow-mode1.png" alt="Flow-model"></p>
+<p>可以看到整个模型分为 (a) 和 (b)，其实 (a) 只是对 (b) 中的“step of flow”的展开。其中，（a）模型的每部分操作具体如下所示：</p>
+<p><img src="/2019/09/20/ML/glow/folw-a.png" alt="function"></p>
+<p>Actnorm 层，全称为 Activation Normalization 翻译为激活标准化，整体的作用类似于批归一化，也就是对输入的数据做预处理，Actnorm 使用每个通道的标度和偏差参数执行激活的仿射变换，类似于批量标准化，初始化这些参数，使得在给定初始数据小批量的情况下，每个通道的后行为动作具有零均值和单位方差。初始化后，标度和偏差被视为与数据无关的常规可训练参数。</p>
+<p>可逆 1×1 卷积层，该层是用来替换在NICE 和 RealNVP 是反转通道的排序的固定装置，其中权重矩阵被初始化为随机旋转矩阵，卷积层的输入和输出通道数量是相同的。</p>
+<blockquote>
+<ol>
+<li><p>LU分解：LU分解是将一个矩阵分解为一个单位下三角矩阵和一个上三角矩阵的乘积（有时候是它们和一个置换矩阵的乘积）</p>
+</li>
+<li><p>张量：定义由若干坐标系改变时满足一定坐标转化关系的有序数组组成的集合为张量，0维张量就是标量，1维张量是向量，2维张量是矩阵，以此类推。</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="仿射耦合层："><a href="#仿射耦合层：" class="headerlink" title="仿射耦合层："></a>仿射耦合层：</h3><p>零初始化：用零初始化每个 NN () 的最后一个卷积，使得每个仿射耦合层最初执行一个同一性函数，这有助于训练深层网络。 </p>
+<p>拆分和连接：split () 函数将输入张量沿通道维度分成两半，而concat () 操作执行相应的反向操作：连接成单个张量。 Glow 中只沿通道维度执行拆分，简化了整体架构。 </p>
+<p>排列：上面的每个流程步骤之前都应该对变量进行某种排列，以确保在充分的流程步骤之后，每个维度都可以影响其他每个维度。 NICE 完成的排列类型是在执行加性耦合层之前简单地反转通道（特征）的排序；RealNVP 是执行（固定）随机排列；Glow 则是采用可逆 1 x 1 卷积。</p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>实验的开篇是比较 Glow 和 RealNVP，反转操作上 NICE 采用反转，RealNVP 采用固定随机排列，Glow 采用可逆 1 × 1 卷积，并且耦合方式也影响实验的效果，文章比较了加性耦合层和仿射耦合层的性能差距。通过在 CIFAR-10 数据集的平均负对数似然（每维度的比特）来衡量不同操作的差距，其中所有模型都经过 K = 32 和 L = 3 的训练，实验效果如下图：</p>
+<p><img src="/2019/09/20/ML/glow/figure01.png" alt="figure01"><br>可以从上图看出，Glow 采用的方法都取得了较小的平均负对数似然，效果比其他模型要好。</p>
+<p>为了验证 RealNVP 和 Glow 整体的框架下的差距，实验进一步扩展，比较了 CIFAR-10，ImageNet 和 LSUN 数据集上两者的差距，在相同预处理下，模型在所有数据集上实现了显着的改进。 </p>
+<p>在高分辨率图像的生成上，合成的图像质量和合理性都是很高的，为了对潜在变量插值生成图像，整体的过渡还是相当顺畅的，感觉很自然。</p>
+<p>为了生成更多含语义的图像，文章利用了一些标签来监督训练，对于不同人脸属性合成上，生成的效果和过渡都是很自然合理。</p>
+<p>退火模型对提高生成也是很重要的环节，文章对比了不同退火参数 T 下的实验效果，合理的 T 的选择对于实验效果还是很重要的。</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/08/30/web-bugs/hexo-add-picture/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Hexo 无法加载图片（路径问题）</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.webp" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        凤娇娇
+      
+    </h3>
+    <p class="avatar-slogan">
+      眼睛可以看到百米之外，用心却可以千里之外
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/English/">English</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/">Machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Website-development/">Website development</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-javascript/">hexo,javascript</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/English/" style="font-size: 10px;">English</a> <a href="/tags/Machine-learning/" style="font-size: 20px;">Machine learning</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Website-development/" style="font-size: 10px;">Website development</a> <a href="/tags/hexo-javascript/" style="font-size: 10px;">hexo,javascript</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/20/ML/glow/">glow Generative Flow with Invertible 1*1 Convolutions</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/30/web-bugs/hexo-add-picture/">Hexo 无法加载图片（路径问题）</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/29/note-library/markdown-math/">markdown-math</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/28/web-bugs/web-bug/">dyld: Library not loaded: /usr/local/opt/icu4c/lib/libicui18n.63.dylib</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/15/ML/EvadingClassifiersbyMorphingintheDark/">Evading Classifiers by Morphing in the Dark</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://github.com/Yonahwang" title target='_blank'
+        >Yonahwang</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 yonah wang &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+</body>
+</html>
